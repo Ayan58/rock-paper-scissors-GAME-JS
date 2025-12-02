@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS Game</title>
+</head>
+<body>
+
+    <h3>Enjoy The Game</h3>
+    
+    <button onclick="alert('this is rock')">Rock</button>
+    <button>Paper</button>
+    <button>Scissors</button>
+<script>
+    let generateNum = Math.random
+    function defineMove(){
+        if (generateNum < 1/3){
+            const move = "Rock"
+        }else if (1/3 <= generateNum < 2/3){
+            const move = "Paper"
+        }else if (2/3 <= generateNum < 1){
+            const move = "Scissors"
+        }
+    }
+
+
+</script>
+    
+</body>
+</html>
