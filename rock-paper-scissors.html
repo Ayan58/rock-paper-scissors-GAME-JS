@@ -28,16 +28,17 @@
 
 <script>
 
-    let generateNum = Math.random;
     let ComputerMove = "";
+    let result = "";
 
     function defineMove(){
+        let generateNum = Math.random();
         if (generateNum < 1/3){
-            let ComputerMove = "Rock"
-        }else if (1/3 <= generateNum < 2/3){
-            let ComputerMove = "Paper"
-        }else if (2/3 <= generateNum < 1){
-            let ComputerMove = "Scissors"
+            ComputerMove = "Rock"
+        }else if (1/3 <= generateNum &&  generateNum< 2/3){
+            ComputerMove = "Paper"
+        }else if (2/3 <= generateNum &&  generateNum < 1){
+            ComputerMove = "Scissors"
         }
         return ComputerMove;
     }
@@ -45,7 +46,6 @@
     function defineResult(userMove){
 
 // implemented through multiple ways just for experimenting
-        let result = "";
 
         if (userMove == "Rock" && ComputerMove == "Rock"){
             let result = "Tie"
@@ -75,7 +75,7 @@
             }
         }
 
-        return alert(`Your move is: ${userMove} and Computer move is ${result}`) ;
+        return alert(`Your move is: ${userMove} and Computer move is ${ComputerMove}`) ;
 
     }
 
