@@ -9,19 +9,57 @@
 
     <h3>Enjoy The Game</h3>
     
-    <button onclick="alert('this is rock')">Rock</button>
+    <button onclick="
+        //alert(`Your move is: ${} and Computer move is ${} `)">
+        Rock
+    </button>
     <button>Paper</button>
     <button>Scissors</button>
 <script>
     let generateNum = Math.random
     function defineMove(){
         if (generateNum < 1/3){
-            const move = "Rock"
+            const ComputerMove = "Rock"
         }else if (1/3 <= generateNum < 2/3){
-            const move = "Paper"
+            const ComputerMove = "Paper"
         }else if (2/3 <= generateNum < 1){
-            const move = "Scissors"
+            const ComputerMove = "Scissors"
         }
+    }
+    function defineResult(userMove){
+
+// implemented through multiple ways just for experimenting
+
+        if (userMove == "Rock" && ComputerMove == "Rock"){
+            let result = "Tie"
+        }else if (userMove == "Rock" && ComputerMove == "Paper"){
+            let result = "You Lose"
+        }else if (userMove == "Rock" && ComputerMove == "Scissors"){
+            let result = "You Won"
+        }
+
+        if (userMove == "Paper"){
+            if (ComputerMove == "Paper"){
+                let result = "Tie"
+            }else if (ComputerMove == "Rock"){
+                let result = "You Won"
+            }if (ComputerMove == "Scissors"){
+                let result = "You Lose"
+            }
+        }
+
+        if (userMove == "Scissor"){
+            if (ComputerMove == "Paper"){
+                let result = "You Lose"
+            }else if (ComputerMove == "Rock"){
+                let result = "You Won"
+            }if (ComputerMove == "Scissors"){
+                let result = "Tie"
+            }
+        }
+
+    return result;
+
     }
 
 
