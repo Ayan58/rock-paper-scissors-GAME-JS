@@ -24,12 +24,21 @@
         defineResult('Scissors')
         ">Scissors</button>
 
-    <button>Reset Game</button>
+    <button onclick="
+        score.Won=0,
+        score.Defeat=0,
+        score.Tie=0"
+
+    >Reset Game</button>
 
 <script>
 
     let ComputerMove = "";
-    let result = "";
+    let score = {
+            Won: 0,
+            Defeat : 0, 
+            Tie :0
+        }
 
     function defineMove(){
         let generateNum = Math.random();
@@ -45,37 +54,48 @@
 
     function defineResult(userMove){
 
-// implemented through multiple ways just for experimenting
+        let result = "";
 
+// implemented through multiple ways just for experimenting
+        
         if (userMove == "Rock" && ComputerMove == "Rock"){
-            let result = "Tie"
+            result = "Tie"
         }else if (userMove == "Rock" && ComputerMove == "Paper"){
-            let result = "You Lose"
+            result = "You Lose"
         }else if (userMove == "Rock" && ComputerMove == "Scissors"){
-            let result = "You Won"
+            result = "You Won"
         }
 
         if (userMove == "Paper"){
             if (ComputerMove == "Paper"){
-                let result = "Tie"
+                result = "Tie"
             }else if (ComputerMove == "Rock"){
-                let result = "You Won"
+                result = "You Won"
             }if (ComputerMove == "Scissors"){
-                let result = "You Lose"
+                result = "You Lose"
             }
         }
 
-        if (userMove == "Scissor"){
+        if (userMove == "Scissors"){
             if (ComputerMove == "Paper"){
-                let result = "You Lose"
+                result = "You Won"
             }else if (ComputerMove == "Rock"){
-                let result = "You Won"
+                result = "You Lose"
             }if (ComputerMove == "Scissors"){
-                let result = "Tie"
+                result = "Tie"
             }
         }
+        if (result == "Tie"){
+            score.Tie+=1;
+        }else if (result == "You Won"){
+            score.Won+=1;
+        }else{
+            score.Defeat+=1;
+        }
 
-        return alert(`Your move is: ${userMove} and Computer move is ${ComputerMove}`) ;
+        return alert(`Your move is ${userMove} and Computer move is ${ComputerMove}.
+So, ${result}.
+Wins: ${score.Won}, Defeats: ${score.Defeat}, Ties: ${score.Tie}`);
 
     }
 
