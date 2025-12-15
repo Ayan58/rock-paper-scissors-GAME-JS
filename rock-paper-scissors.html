@@ -24,6 +24,8 @@
         defineResult('Scissors')
         ">Scissors</button>
 
+    <p class="js-result"></p>
+
     <button onclick="
         score.Won=0,
         score.Defeat=0,
@@ -93,9 +95,15 @@
             score.Defeat+=1;
         }
 
+        document.querySelector(".js-result").innerHTML = `Your move is ${userMove} and Computer move is ${ComputerMove}.
+So, ${result}.
+Wins: ${score.Won}, Defeats: ${score.Defeat}, Ties: ${score.Tie}`
+/*
         return alert(`Your move is ${userMove} and Computer move is ${ComputerMove}.
 So, ${result}.
 Wins: ${score.Won}, Defeats: ${score.Defeat}, Ties: ${score.Tie}`);
+
+*/
 
     }
 
